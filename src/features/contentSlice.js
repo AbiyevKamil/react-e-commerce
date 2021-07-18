@@ -11,6 +11,7 @@ const initialState = {
     myCard: JSON.parse(localStorage.getItem("myCard")) || [],
     categories: ["All", "Men's clothing", "Jewelery", "Electronics", "Women's clothing"],
     categorizedData: [],
+    isLoading: true
 }
 
 export const fetchContent = createAsyncThunk('fetchContent', async () => {
@@ -63,10 +64,11 @@ const contentSlice = createSlice({
     },
     extraReducers: {
         [fetchContent.pending]: (state) => {
-
+            state.isLoading = true
         },
         [fetchContent.fulfilled]: (state, action) => {
             state.data = action.payload;
+            state.isLoading = false
             state.myCard = JSON.parse(localStorage.getItem("myCard")) || action.payload.map(item => {
                 return {
                     ...item,
@@ -84,4 +86,5 @@ export const selectedData = state => state.content.data
 export const selectedCard = state => state.content.myCard
 export const selectedCategorizedData = state => state.content.categorizedData
 export const selectedCategories = state => state.content.categories
+export const selectedLoading = state => state.content.isLoading
 export default contentSlice.reducer

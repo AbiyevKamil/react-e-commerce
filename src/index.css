@@ -11,6 +11,11 @@ body {
     user-select: none;
 }
 
+.spinnerComponent {
+    width: 200px !important;
+    height: 200px !important;
+}
+
 .searchContainer {
     flex: 0.4;
 }
@@ -165,12 +170,22 @@ body {
         width: 180px;
         height: 180px;
     }
+
+    .spinnerComponent {
+        width: 150px !important;
+        height: 150px !important;
+    }
 }
 
 @media (max-width: 580px) {
     .itemsContainer {
         align-items: center !important;
         justify-content: center !important;
+    }
+
+    .spinnerComponent {
+        width: 110px !important;
+        height: 110px !important;
     }
 }
 
@@ -186,5 +201,10 @@ body {
 
     .totalCostLabel {
         font-size: 14px;
+    }
+
+    .spinnerComponent {
+        width: 80px !important;
+        height: 80px !important;
     }
 }
