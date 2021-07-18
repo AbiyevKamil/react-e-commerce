@@ -12,7 +12,7 @@ const Items = () => {
     const category = search.get('category');
     useEffect(() => {
         dispatch(setCategorizedData(category))
-    }, [data])
+    }, [category, data, dispatch])
     return (
         <div className="itemsContainer container my-5 d-flex flex-wrap justify-content-md-center justify-content-sm-center justify-content-lg-center">
             {categorizedData.map(itemInfo => <Item key={itemInfo.id} itemInfo={itemInfo} />)}

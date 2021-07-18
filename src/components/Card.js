@@ -11,6 +11,7 @@ const Card = () => {
         let cost = 0;
         card.map(item => {
             cost += (item.count * item.price)
+            return 0;
         })
         return cost
     }

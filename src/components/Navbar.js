@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 import { RiShoppingBasketFill } from 'react-icons/ri'
@@ -16,7 +13,7 @@ const Navbar = () => {
     useEffect(() => {
         let count = 0
         card.map(item => {
-            count += item.count
+            return count += item.count
         })
         setCountOfItems(count)
     }, [card])

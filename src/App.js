@@ -5,14 +5,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useLocation
 } from "react-router-dom";
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux'
-import { selectedData, fetchContent } from './features/contentSlice'
+import { useDispatch } from 'react-redux'
+import { fetchContent } from './features/contentSlice'
 import NavbarDown from './components/NavbarDown';
-import Item from './components/Item';
 import Card from './components/Card';
 import Items from './components/Items';
 import ItemDescription from './components/ItemDescription';
@@ -22,8 +18,7 @@ function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchContent())
-  }, [])
-  const data = useSelector(selectedData)
+  })
   return (
     <Router>
       <div className="">

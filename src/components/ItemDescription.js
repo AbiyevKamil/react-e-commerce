@@ -15,6 +15,7 @@ const ItemDescription = () => {
             if (item.title.toString().toLowerCase().trim() === title.toString().toLowerCase().trim()) {
                 itemInfo = item
             }
+            return 0;
         })
         setCurrentItem(itemInfo)
     }, [data, title])

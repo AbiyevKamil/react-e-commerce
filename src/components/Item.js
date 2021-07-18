@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { selectedCard, addToCard } from '../features/contentSlice'
+import { addToCard } from '../features/contentSlice'
 
 
 const Item = ({ itemInfo }) => {
-    const card = useSelector(selectedCard)
     const dispatch = useDispatch()
-    
+
     return (
         <div className="item__card card mb-3 me-md-3 p-4 bg-light" style={{ width: "300px", height: "480px" }}>
             <img width="100" height="200" className="card-img-top" src={itemInfo.image} alt="Card cap" />

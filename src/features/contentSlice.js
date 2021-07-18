@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios';
 
 const getCategorizedData = (category, data) => {
     return data.filter(item => item.category.toString().toLowerCase() === category.toString().toLowerCase())
@@ -30,6 +29,7 @@ const contentSlice = createSlice({
                 if (item.title === action.payload.title) {
                     item.count += 1
                 }
+                return item
             })
             localStorage.setItem("myCard", JSON.stringify(state.myCard))
         },
@@ -46,7 +46,7 @@ const contentSlice = createSlice({
                 case state.categories[2]:
                     state.categorizedData = getCategorizedData(action.payload, state.data)
                     break;
-                    
+
                 case state.categories[3]:
                     state.categorizedData = getCategorizedData(action.payload, state.data)
                     break;
