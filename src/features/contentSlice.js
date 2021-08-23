@@ -87,4 +87,4 @@ export const selectedCard = state => state.content.myCard
 export const selectedCategorizedData = state => state.content.categorizedData
 export const selectedCategories = state => state.content.categories
 export const selectedLoading = state => state.content.isLoading
-export default contentSlice.reducer
+export default contentSlice.reducer 
